@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import BackgroundWrapper from "@/components/BackgroundWrapper";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ValueSection from "@/components/ValueSection";
@@ -60,23 +61,25 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <main className="space-y-4 sm:space-y-8">
-        <Hero />
-        <ValueSection />
-        <PlatformCapabilities />
-        <Industries />
-        <ERPSolutions />
-        <Services />
-        <ImplementationProcess />
-        <Packages />
-        <Testimonials />
-        <Contact />
-      </main>
-      <Footer />
-      <BackToTop />
-    </div>
+    <BackgroundWrapper variant="auto">
+      <div className="min-h-screen">
+        <Navbar />
+        <main className="space-y-4 sm:space-y-8">
+          <Hero />
+          <ValueSection />
+          <PlatformCapabilities />
+          <Industries />
+          <ERPSolutions />
+          <Services />
+          <ImplementationProcess />
+          <Packages />
+          <Testimonials />
+          <Contact />
+        </main>
+        <Footer />
+        <BackToTop />
+      </div>
+    </BackgroundWrapper>
   );
 };
 

@@ -101,12 +101,18 @@
   }
 
   body {
-    @apply bg-white text-black font-sans antialiased;
+    @apply text-black font-sans antialiased;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    position: relative;
   }
 
   /* Smooth scrolling */
   html {
     scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
   }
 
   /* Custom scrollbar */

@@ -11,7 +11,7 @@ interface CanvasParticle {
   startTime: number;
 }
 
-// High-performance Canvas version
+// High-performance Canvas version for full website background
 const CanvasAnimatedBackground: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number>();
@@ -25,7 +25,7 @@ const CanvasAnimatedBackground: React.FC = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Set canvas size
+    // Set canvas size to cover entire viewport
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;

@@ -1,12 +1,12 @@
 import React from 'react';
 import AnimatedBackground from './AnimatedBackground';
-import AnimatedBackgroundCSS from './AnimatedBackgroundCSS';
 import CanvasAnimatedBackground from './CanvasAnimatedBackground';
+import FullBackgroundAnimation from './FullBackgroundAnimation';
 import { useAnimatedBackground } from '../hooks/useAnimatedBackground';
 
 interface BackgroundWrapperProps {
   children: React.ReactNode;
-  variant?: 'react' | 'css' | 'canvas' | 'auto';
+  variant?: 'react' | 'canvas' | 'html' | 'auto';
 }
 
 const BackgroundWrapper: React.FC<BackgroundWrapperProps> = ({ 
@@ -18,9 +18,9 @@ const BackgroundWrapper: React.FC<BackgroundWrapperProps> = ({
   const getBackgroundComponent = () => {
     if (variant === 'auto') {
       if (shouldUseSimpleAnimation) {
-        return <AnimatedBackgroundCSS />;
+        return <FullBackgroundAnimation />;
       } else if (isLowPerformance) {
-        return <AnimatedBackgroundCSS />;
+        return <AnimatedBackground />;
       } else {
         return <CanvasAnimatedBackground />;
       }
@@ -29,22 +29,22 @@ const BackgroundWrapper: React.FC<BackgroundWrapperProps> = ({
     switch (variant) {
       case 'react':
         return <AnimatedBackground />;
-      case 'css':
-        return <AnimatedBackgroundCSS />;
       case 'canvas':
         return <CanvasAnimatedBackground />;
+      case 'html':
+        return <FullBackgroundAnimation />;
       default:
-        return <AnimatedBackgroundCSS />;
+        return <CanvasAnimatedBackground />;
     }
   };
 
   return (
-    <div style={{ position: 'relative', minHeight: '100vh' }}>
+    <>
       {getBackgroundComponent()}
-      <div style={{ position: 'relative', zIndex: 1 }}>
+      <div style={{ position: 'relative', zIndex: 1, minHeight: '100vh' }}>
         {children}
       </div>
-    </div>
+    </>
   );
 };
 

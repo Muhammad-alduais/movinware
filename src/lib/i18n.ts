@@ -65,7 +65,7 @@ export class I18n {
     });
   }
 
-  static getTranslation(key: string): string {
+  static getTranslation(key: string): any {
     const keys = key.split('.');
     let value: any = this.translations[this.currentLanguage];
     
@@ -86,10 +86,10 @@ export class I18n {
       }
     }
     
-    return typeof value === 'string' ? value : key;
+    return value !== undefined ? value : key;
   }
 
-  static t(key: string): string {
+  static t(key: string): any {
     return this.getTranslation(key);
   }
 }

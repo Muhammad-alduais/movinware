@@ -642,7 +642,7 @@ export const translations: Record<string, Translation> = {
 };
 
 // Get nested translation value
-export function getTranslation(key: string, lang: string = 'en'): string {
+export function getTranslation(key: string, lang: string = 'en'): any {
   const keys = key.split('.');
   let value: any = translations[lang];
   
@@ -663,7 +663,7 @@ export function getTranslation(key: string, lang: string = 'en'): string {
     }
   }
   
-  return typeof value === 'string' ? value : key;
+  return value !== undefined ? value : key;
 }
 
 // Translation hook for React components
@@ -675,7 +675,7 @@ export function useTranslation() {
     return 'en';
   });
 
-  const t = React.useCallback((key: string) => {
+  const t = React.useCallback((key: string): any => {
     return getTranslation(key, currentLanguage);
   }, [currentLanguage]);
 

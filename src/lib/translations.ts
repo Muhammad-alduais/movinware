@@ -1,3 +1,5 @@
+import React from 'react';
+
 // Translation system for Arabic and English
 export interface Translation {
   [key: string]: string | Translation;

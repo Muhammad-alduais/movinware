@@ -1,56 +1,59 @@
 import React from "react";
 import { Search, Palette, Code, Rocket, TrendingUp, Clock, CheckCircle, Users } from "lucide-react";
+import { useTranslation } from "@/lib/translations";
 
 const ImplementationProcess = () => {
+  const { t } = useTranslation();
+  
   const phases = [
     {
       icon: Search,
-      title: "Discovery & Assessment",
-      duration: "Week 1-2",
-      description: "We analyze your current processes, identify pain points, and create a detailed implementation roadmap.",
-      deliverables: ["Process Analysis", "Requirements Document", "Implementation Plan"],
+      title: t('implementation.phases.discovery.title'),
+      duration: t('implementation.phases.discovery.duration'),
+      description: t('implementation.phases.discovery.description'),
+      deliverables: t('implementation.phases.discovery.deliverables'),
       color: "bg-blue-50 text-blue-600"
     },
     {
       icon: Palette,
-      title: "Design & Configuration",
-      duration: "Week 3-5",
-      description: "Custom workflows, system configuration, and user interface design tailored to your business needs.",
-      deliverables: ["System Design", "Workflow Configuration", "UI Mockups"],
+      title: t('implementation.phases.design.title'),
+      duration: t('implementation.phases.design.duration'),
+      description: t('implementation.phases.design.description'),
+      deliverables: t('implementation.phases.design.deliverables'),
       color: "bg-purple-50 text-purple-600"
     },
     {
       icon: Code,
-      title: "Development & Integration",
-      duration: "Week 6-9",
-      description: "System development, data migration, third-party integrations, and comprehensive testing.",
-      deliverables: ["Developed System", "Data Migration", "Integration Testing"],
+      title: t('implementation.phases.development.title'),
+      duration: t('implementation.phases.development.duration'),
+      description: t('implementation.phases.development.description'),
+      deliverables: t('implementation.phases.development.deliverables'),
       color: "bg-green-50 text-green-600"
     },
     {
       icon: Rocket,
-      title: "Deployment & Training",
-      duration: "Week 10-11",
-      description: "Go-live support with comprehensive user training, system monitoring, and immediate support.",
-      deliverables: ["Live System", "Trained Users", "Support Documentation"],
+      title: t('implementation.phases.deployment.title'),
+      duration: t('implementation.phases.deployment.duration'),
+      description: t('implementation.phases.deployment.description'),
+      deliverables: t('implementation.phases.deployment.deliverables'),
       color: "bg-orange-50 text-orange-600"
     },
     {
       icon: TrendingUp,
-      title: "Optimization & Support",
-      duration: "Ongoing",
-      description: "Continuous optimization, performance monitoring, feature enhancements, and dedicated support.",
-      deliverables: ["Performance Reports", "Feature Updates", "24/7 Support"],
+      title: t('implementation.phases.optimization.title'),
+      duration: t('implementation.phases.optimization.duration'),
+      description: t('implementation.phases.optimization.description'),
+      deliverables: t('implementation.phases.optimization.deliverables'),
       color: "bg-pulse-50 text-pulse-600"
     }
   ];
 
   const timeline = [
-    { week: "1-2", phase: "Discovery" },
-    { week: "3-5", phase: "Design" },
-    { week: "6-9", phase: "Development" },
-    { week: "10-11", phase: "Deployment" },
-    { week: "12+", phase: "Support" }
+    { week: t('implementation.timeline.discovery.week'), phase: t('implementation.timeline.discovery.phase') },
+    { week: t('implementation.timeline.design.week'), phase: t('implementation.timeline.design.phase') },
+    { week: t('implementation.timeline.development.week'), phase: t('implementation.timeline.development.phase') },
+    { week: t('implementation.timeline.deployment.week'), phase: t('implementation.timeline.deployment.phase') },
+    { week: t('implementation.timeline.support.week'), phase: t('implementation.timeline.support.phase') }
   ];
 
   const headerBg = {
@@ -67,14 +70,13 @@ const ImplementationProcess = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
           <div className="section-header-badge animate-badge-float mb-8">
             <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-pulse-500 text-white mr-3 text-sm font-bold">07</span>
-            <span className="font-semibold">Implementation Process</span>
+            <span className="font-semibold" data-i18n="implementation.badge">{t('implementation.badge')}</span>
           </div>
-          <h2 className="section-header-title animate-header-glow">
-            From concept to<br />
-            <span className="font-medium">go-live in 11 weeks</span>
+          <h2 className="section-header-title animate-header-glow" data-i18n="implementation.title">
+            <span dangerouslySetInnerHTML={{ __html: t('implementation.title') }} />
           </h2>
-          <p className="section-header-subtitle">
-            Our proven methodology ensures successful implementation with minimal disruption to your business
+          <p className="section-header-subtitle" data-i18n="implementation.subtitle">
+            {t('implementation.subtitle')}
           </p>
         </div>
       </div>
@@ -82,14 +84,14 @@ const ImplementationProcess = () => {
       <div className="py-20 max-w-7xl mx-auto px-6">
         <div className="mb-20 opacity-0 animate-fade-scale" style={{ animationDelay: "0.2s" }}>
           <div className="bg-gray-50 rounded-3xl p-8 border border-gray-100">
-            <h3 className="text-xl font-medium text-gray-900 mb-8 text-center">Implementation Timeline</h3>
+            <h3 className="text-xl font-medium text-gray-900 mb-8 text-center" data-i18n="implementation.timeline.title">{t('implementation.timeline.title')}</h3>
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               {timeline.map((item, index) => (
                 <div key={index} className="flex flex-col items-center text-center relative">
                   <div className="w-12 h-12 bg-pulse-500 rounded-full flex items-center justify-center text-white font-medium mb-3">
                     <Clock className="w-5 h-5" />
                   </div>
-                  <div className="text-sm font-medium text-gray-900">Week {item.week}</div>
+                  <div className="text-sm font-medium text-gray-900">{t('common.week')} {item.week}</div>
                   <div className="text-xs text-gray-600">{item.phase}</div>
                   {index < timeline.length - 1 && (
                     <div className="hidden md:block absolute left-full top-6 w-full h-px bg-gray-200"></div>
@@ -128,7 +130,7 @@ const ImplementationProcess = () => {
                     <div className="lg:w-80">
                       <h4 className="text-sm font-medium text-gray-900 mb-4 flex items-center">
                         <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                        Key Deliverables
+                        <span data-i18n="implementation.keyDeliverables">{t('implementation.keyDeliverables') || 'Key Deliverables'}</span>
                       </h4>
                       <div className="space-y-3">
                         {phase.deliverables.map((deliverable, deliverableIndex) => (
@@ -148,16 +150,16 @@ const ImplementationProcess = () => {
 
         <div className="mt-20">
           <div className="text-center mb-12 opacity-0 animate-slide-up" style={{ animationDelay: "0.8s" }}>
-            <h3 className="text-2xl font-light text-gray-900 mb-4">Why our process works</h3>
-            <p className="text-gray-600">Proven results from our implementation methodology</p>
+            <h3 className="text-2xl font-light text-gray-900 mb-4" data-i18n="implementation.whyItWorks.title">{t('implementation.whyItWorks.title')}</h3>
+            <p className="text-gray-600" data-i18n="implementation.whyItWorks.subtitle">{t('implementation.whyItWorks.subtitle')}</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
-              { metric: "85%", label: "Faster Implementation", desc: "Compared to traditional methods" },
-              { metric: "Zero", label: "Downtime", desc: "Seamless transition process" },
-              { metric: "98%", label: "User Adoption", desc: "Within first month" },
-              { metric: "24/7", label: "Support", desc: "Dedicated implementation team" }
+              t('implementation.whyItWorks.fasterImplementation'),
+              t('implementation.whyItWorks.zeroDowntime'),
+              t('implementation.whyItWorks.userAdoption'),
+              t('implementation.whyItWorks.support')
             ].map((stat, index) => (
               <div 
                 key={index} 
@@ -175,12 +177,12 @@ const ImplementationProcess = () => {
         <div className="mt-20 text-center opacity-0 animate-slide-up" style={{ animationDelay: "1.3s" }}>
           <div className="bg-gray-50 rounded-3xl p-12 border border-gray-100">
             <Users className="w-12 h-12 text-pulse-500 mx-auto mb-6" />
-            <h3 className="text-2xl font-light text-gray-900 mb-4">Ready to get started?</h3>
-            <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-              Schedule a consultation with our implementation experts to discuss your project timeline and requirements.
+            <h3 className="text-2xl font-light text-gray-900 mb-4" data-i18n="implementation.cta.title">{t('implementation.cta.title')}</h3>
+            <p className="text-gray-600 mb-8 max-w-2xl mx-auto" data-i18n="implementation.cta.subtitle">
+              {t('implementation.cta.subtitle')}
             </p>
-            <button className="bg-pulse-500 text-white px-8 py-3 rounded-full font-medium hover:bg-pulse-600 transition-colors duration-300">
-              Schedule Consultation
+            <button className="bg-pulse-500 text-white px-8 py-3 rounded-full font-medium hover:bg-pulse-600 transition-colors duration-300" data-i18n="implementation.cta.scheduleConsultation">
+              {t('implementation.cta.scheduleConsultation')}
             </button>
           </div>
         </div>

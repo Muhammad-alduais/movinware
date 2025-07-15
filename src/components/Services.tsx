@@ -2,15 +2,17 @@ import React, { useState } from "react";
 import { Settings, Building2, Brain, Palette, Database, Headphones } from "lucide-react";
 import DetailModal from "./DetailModal";
 import PreviewCard from "./PreviewCard";
+import { useTranslation } from "@/lib/translations";
 
 const Services = () => {
+  const { t } = useTranslation();
   const [selectedService, setSelectedService] = useState<any>(null);
   
   const services = [
     {
       icon: Settings,
-      title: "ERP Implementation",
-      description: "End-to-end implementation with proven methodologies and dedicated project management.",
+      title: t('services.implementation.title'),
+      description: t('services.implementation.description'),
       capabilities: [
         "System Architecture Design & Planning",
         "Custom Development & Configuration",
@@ -21,7 +23,7 @@ const Services = () => {
         "Change Management & User Adoption",
         "Quality Assurance & Testing"
       ],
-      timeline: "8-12 weeks",
+      timeline: t('services.implementation.timeline'),
       fullDescription: "Comprehensive ERP implementation services that transform your business operations with minimal disruption. Our proven methodology ensures successful deployment with dedicated project management, custom development, and comprehensive training programs that drive user adoption and business value.",
       benefits: [
         "85% faster implementation compared to traditional methods",
@@ -54,8 +56,8 @@ const Services = () => {
     },
     {
       icon: Building2,
-      title: "Industry Solutions",
-      description: "Specialized solutions tailored to your industry's unique requirements and compliance needs.",
+      title: t('services.industry.title'),
+      description: t('services.industry.description'),
       capabilities: [
         "Healthcare Management Systems",
         "Educational Platform Solutions",
@@ -66,7 +68,7 @@ const Services = () => {
         "Real Estate Management Systems",
         "Hospitality & Tourism Solutions"
       ],
-      timeline: "6-10 weeks",
+      timeline: t('services.industry.timeline'),
       fullDescription: "Industry-specific solutions designed to address unique sector challenges and compliance requirements. Our deep industry expertise ensures solutions are tailored to your specific business environment, regulatory needs, and operational workflows for maximum effectiveness.",
       benefits: [
         "Industry-specific features reduce customization time",
@@ -77,8 +79,8 @@ const Services = () => {
     },
     {
       icon: Brain,
-      title: "AI Integration",
-      description: "Advanced AI capabilities to automate processes and provide intelligent business insights.",
+      title: t('services.ai.title'),
+      description: t('services.ai.description'),
       capabilities: [
         "Predictive Analytics Implementation",
         "Process Automation Development",
@@ -89,7 +91,7 @@ const Services = () => {
         "Intelligent Reporting Systems",
         "Machine Learning Model Development"
       ],
-      timeline: "4-8 weeks",
+      timeline: t('services.ai.timeline'),
       fullDescription: "Transform your business with AI-powered automation and intelligent insights. Our AI integration services leverage machine learning, predictive analytics, and automation to optimize operations, reduce manual tasks, and provide actionable insights that drive business growth.",
       benefits: [
         "Predictive analytics improve decision accuracy by 85%",
@@ -100,8 +102,8 @@ const Services = () => {
     },
     {
       icon: Palette,
-      title: "UX Design & Localization",
-      description: "User-centered design with full localization support for MENA markets.",
+      title: t('services.ux.title'),
+      description: t('services.ux.description'),
       capabilities: [
         "User Experience (UX) Design",
         "Right-to-Left (RTL) Interface Design",
@@ -112,7 +114,7 @@ const Services = () => {
         "Brand Integration & Customization",
         "Usability Testing & Optimization"
       ],
-      timeline: "3-6 weeks",
+      timeline: t('services.ux.timeline'),
       fullDescription: "Create intuitive, culturally-appropriate user experiences with comprehensive localization for MENA markets. Our design services ensure your platform is not only visually appealing but also accessible, culturally relevant, and optimized for diverse user needs.",
       benefits: [
         "Culturally-adapted interfaces improve user adoption",
@@ -123,8 +125,8 @@ const Services = () => {
     },
     {
       icon: Database,
-      title: "Data Migration & Integration",
-      description: "Secure, efficient data migration with seamless third-party system integrations.",
+      title: t('services.data.title'),
+      description: t('services.data.description'),
       capabilities: [
         "Legacy System Data Migration",
         "API Development & Integration",
@@ -135,7 +137,7 @@ const Services = () => {
         "Database Optimization & Tuning",
         "Data Security & Compliance"
       ],
-      timeline: "2-4 weeks",
+      timeline: t('services.data.timeline'),
       fullDescription: "Ensure seamless data transition and system integration with our comprehensive migration and integration services. We handle complex data transformations, API integrations, and real-time synchronization to maintain business continuity throughout the transition.",
       benefits: [
         "Zero data loss with validated migration processes",
@@ -146,8 +148,8 @@ const Services = () => {
     },
     {
       icon: Headphones,
-      title: "Support & Maintenance",
-      description: "Comprehensive support services ensuring optimal system performance and user satisfaction.",
+      title: t('services.support.title'),
+      description: t('services.support.description'),
       capabilities: [
         "24/7 Technical Support Services",
         "System Performance Monitoring",
@@ -158,7 +160,7 @@ const Services = () => {
         "Feature Enhancement Development",
         "System Health Reporting"
       ],
-      timeline: "Ongoing",
+      timeline: t('services.support.timeline'),
       fullDescription: "Maintain optimal system performance with our comprehensive support and maintenance services. Our dedicated support team provides 24/7 assistance, proactive monitoring, regular updates, and continuous optimization to ensure your system delivers consistent business value.",
       benefits: [
         "24/7 support ensures minimal business disruption",
@@ -183,14 +185,13 @@ const Services = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
           <div className="section-header-badge animate-badge-float mb-8">
             <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-pulse-500 text-white mr-3 text-sm font-bold">06</span>
-            <span className="font-semibold">Professional Services</span>
+            <span className="font-semibold" data-i18n="services.badge">{t('services.badge')}</span>
           </div>
-          <h2 className="section-header-title animate-header-glow">
-            Expert services for<br />
-            <span className="font-medium">successful implementation</span>
+          <h2 className="section-header-title animate-header-glow" data-i18n="services.title">
+            <span dangerouslySetInnerHTML={{ __html: t('services.title') }} />
           </h2>
-          <p className="section-header-subtitle">
-            Our certified professionals ensure your ERP implementation is delivered on time, within budget, and exceeds expectations
+          <p className="section-header-subtitle" data-i18n="services.subtitle">
+            {t('services.subtitle')}
           </p>
         </div>
       </div>
@@ -213,19 +214,19 @@ const Services = () => {
         <div className="opacity-0 animate-fade-scale" style={{ animationDelay: "0.4s" }}>
           <div className="bg-white rounded-3xl p-12 border border-gray-200 shadow-sm">
             <div className="text-center mb-12">
-              <h3 className="text-2xl font-light text-gray-900 mb-4">Our Service Methodology</h3>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                A structured approach that ensures quality delivery and client satisfaction at every stage
+              <h3 className="text-2xl font-light text-gray-900 mb-4" data-i18n="services.methodology.title">{t('services.methodology.title')}</h3>
+              <p className="text-gray-600 max-w-2xl mx-auto" data-i18n="services.methodology.subtitle">
+                {t('services.methodology.subtitle')}
               </p>
             </div>
             
             <div className="flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0 md:space-x-4 relative">
               {[
-                { step: "Consultation", description: "Understanding your requirements" },
-                { step: "Planning", description: "Detailed project roadmap" },
-                { step: "Execution", description: "Professional implementation" },
-                { step: "Delivery", description: "Quality assurance & handover" },
-                { step: "Support", description: "Ongoing maintenance & optimization" }
+                t('services.methodology.consultation'),
+                t('services.methodology.planning'),
+                t('services.methodology.execution'),
+                t('services.methodology.delivery'),
+                t('services.methodology.support')
               ].map((process, index) => (
                 <div key={index} className="flex flex-col items-center text-center relative flex-1">
                   <div className="w-12 h-12 bg-pulse-500 rounded-full flex items-center justify-center text-white font-medium mb-4 text-sm relative z-10">
@@ -245,9 +246,9 @@ const Services = () => {
         <div className="mt-20 opacity-0 animate-slide-up" style={{ animationDelay: "0.6s" }}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { metric: "50+", label: "Certified Professionals", desc: "Expert consultants and developers" },
-              { metric: "500+", label: "Successful Projects", desc: "Across various industries" },
-              { metric: "99%", label: "Client Satisfaction", desc: "Based on project completion surveys" }
+              t('services.stats.professionals'),
+              t('services.stats.projects'),
+              t('services.stats.satisfaction')
             ].map((stat, index) => (
               <div key={index} className="text-center bg-white rounded-3xl p-8 border border-gray-200">
                 <div className="text-3xl font-light text-pulse-500 mb-2">{stat.metric}</div>
@@ -264,16 +265,16 @@ const Services = () => {
             <div className="absolute bottom-0 left-0 w-24 h-24 bg-pulse-500 rounded-full opacity-10"></div>
             
             <div className="relative z-10">
-              <h3 className="text-2xl font-light mb-4">Ready to work with experts?</h3>
-              <p className="text-white/80 mb-8 max-w-2xl mx-auto">
-                Schedule a consultation with our professional services team to discuss your project requirements and timeline.
+              <h3 className="text-2xl font-light mb-4" data-i18n="services.cta.title">{t('services.cta.title')}</h3>
+              <p className="text-white/80 mb-8 max-w-2xl mx-auto" data-i18n="services.cta.subtitle">
+                {t('services.cta.subtitle')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-white text-gray-900 px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition-all duration-300">
-                  Schedule Consultation
+                <button className="bg-white text-gray-900 px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition-all duration-300" data-i18n="services.cta.scheduleConsultation">
+                  {t('services.cta.scheduleConsultation')}
                 </button>
-                <button className="border border-white/30 text-white px-8 py-3 rounded-full font-medium hover:bg-white/10 transition-all duration-300">
-                  View Case Studies
+                <button className="border border-white/30 text-white px-8 py-3 rounded-full font-medium hover:bg-white/10 transition-all duration-300" data-i18n="services.cta.viewCaseStudies">
+                  {t('services.cta.viewCaseStudies')}
                 </button>
               </div>
             </div>

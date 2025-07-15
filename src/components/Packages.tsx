@@ -2,19 +2,21 @@ import React, { useState } from "react";
 import { Zap, Building, Building2, MessageSquare, Check } from "lucide-react";
 import DetailModal from "./DetailModal";
 import PreviewCard from "./PreviewCard";
+import { useTranslation } from "@/lib/translations";
 
 const Packages = () => {
+  const { t } = useTranslation();
   const [selectedPackage, setSelectedPackage] = useState<any>(null);
   
   const packages = [
     {
       icon: Zap,
-      title: "Startup",
-      description: "Perfect for growing businesses ready to scale their operations efficiently.",
-      price: "$299",
-      period: "/month",
-      originalPrice: "$399",
-      features: ["Quick Implementation", "Core Modules", "Basic Support", "Cloud Hosting", "Up to 10 Users", "Mobile Access"],
+      title: t('packages.startup.title'),
+      description: t('packages.startup.description'),
+      price: t('packages.startup.price'),
+      period: t('packages.startup.period'),
+      originalPrice: t('packages.startup.originalPrice'),
+      features: t('packages.startup.features'),
       popular: false,
       fullDescription: "Our Startup package is designed for growing businesses that need powerful ERP capabilities without the complexity. Perfect for companies with 5-50 employees who want to streamline operations, improve efficiency, and scale sustainably with integrated business management tools.",
       detailedFeatures: [
@@ -39,13 +41,13 @@ const Packages = () => {
     },
     {
       icon: Building,
-      title: "Professional",
-      description: "Comprehensive solution for established companies with complex operational needs.",
-      price: "$599",
-      period: "/month",
-      originalPrice: "$799",
-      features: ["Advanced Features", "Custom Workflows", "Priority Support", "Multi-location", "Advanced Analytics", "API Access", "Up to 50 Users", "Custom Reports"],
-      popular: true,
+      title: t('packages.professional.title'),
+      description: t('packages.professional.description'),
+      price: t('packages.professional.price'),
+      period: t('packages.professional.period'),
+      originalPrice: t('packages.professional.originalPrice'),
+      features: t('packages.professional.features'),
+      popular: t('packages.professional.popular'),
       fullDescription: "The Professional package offers comprehensive ERP functionality for established businesses with complex operations. Ideal for companies with 50-200 employees requiring advanced features, custom workflows, and multi-location support with priority technical assistance.",
       detailedFeatures: [
         "Advanced Feature Set (All Modules Included)",
@@ -71,12 +73,12 @@ const Packages = () => {
     },
     {
       icon: Building2,
-      title: "Enterprise",
-      description: "Advanced solution for large organizations with complex compliance and customization requirements.",
-      price: "$1,299",
-      period: "/month",
-      originalPrice: "$1,599",
-      features: ["White-label Options", "Dedicated Support", "Custom Development", "Compliance Tools", "Advanced Security", "SLA Guarantee", "Unlimited Users", "On-premise Option"],
+      title: t('packages.enterprise.title'),
+      description: t('packages.enterprise.description'),
+      price: t('packages.enterprise.price'),
+      period: t('packages.enterprise.period'),
+      originalPrice: t('packages.enterprise.originalPrice'),
+      features: t('packages.enterprise.features'),
       popular: false,
       fullDescription: "Our Enterprise package delivers maximum flexibility and customization for large organizations with complex requirements. Perfect for companies with 200+ employees requiring white-label solutions, custom development, and enterprise-grade security with guaranteed service levels.",
       detailedFeatures: [
@@ -118,14 +120,13 @@ const Packages = () => {
         <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
           <div className="section-header-badge animate-badge-float mb-8">
             <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-pulse-500 text-white mr-3 text-sm font-bold">08</span>
-            <span className="font-semibold">Packages</span>
+            <span className="font-semibold" data-i18n="packages.badge">{t('packages.badge')}</span>
           </div>
-          <h2 className="section-header-title animate-header-glow">
-            Choose your<br />
-            <span className="font-medium">perfect plan</span>
+          <h2 className="section-header-title animate-header-glow" data-i18n="packages.title">
+            <span dangerouslySetInnerHTML={{ __html: t('packages.title') }} />
           </h2>
-          <p className="section-header-subtitle">
-            Transparent pricing with no hidden fees. Start your free trial today.
+          <p className="section-header-subtitle" data-i18n="packages.subtitle">
+            {t('packages.subtitle')}
           </p>
         </div>
       </div>
@@ -134,10 +135,10 @@ const Packages = () => {
         <div className="text-center mb-12 opacity-0 animate-on-scroll">
           <div className="inline-flex items-center bg-gray-100 rounded-full p-1 mb-8">
             <button className="px-6 py-2 rounded-full bg-white text-gray-900 font-medium shadow-sm">
-              Monthly
+              <span data-i18n="packages.billing.monthly">{t('packages.billing.monthly')}</span>
             </button>
             <button className="px-6 py-2 rounded-full text-gray-600 font-medium">
-              Annual (Save 20%)
+              <span data-i18n="packages.billing.annual">{t('packages.billing.annual')}</span>
             </button>
           </div>
         </div>
@@ -155,7 +156,7 @@ const Packages = () => {
               {pkg.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
                   <div className="bg-pulse-500 text-white px-4 py-1 rounded-full text-sm font-medium">
-                    Most Popular
+                    <span data-i18n="packages.mostPopular">{t('packages.mostPopular') || 'Most Popular'}</span>
                   </div>
                 </div>
               )}
@@ -180,7 +181,7 @@ const Packages = () => {
                   </div>
                   <div className="flex items-center justify-center mb-4">
                     <span className="text-sm text-gray-400 line-through mr-2">{pkg.originalPrice}</span>
-                    <span className="text-sm text-green-600 font-medium">Save 25%</span>
+                    <span className="text-sm text-green-600 font-medium" data-i18n="packages.save25">{t('packages.save25') || 'Save 25%'}</span>
                   </div>
                 </div>
                 
@@ -193,7 +194,7 @@ const Packages = () => {
                   ))}
                   {pkg.features.length > 4 && (
                     <li className="text-sm text-gray-500 pl-6">
-                      +{pkg.features.length - 4} more features
+                      +{pkg.features.length - 4} <span data-i18n="packages.moreFeatures">{t('packages.moreFeatures') || 'more features'}</span>
                     </li>
                   )}
                 </ul>
@@ -202,7 +203,7 @@ const Packages = () => {
                   onClick={() => setSelectedPackage(pkg)}
                   className="w-full py-2 px-4 rounded-xl text-sm font-medium mb-4 border border-gray-300 text-gray-700 hover:bg-gray-50 transition-all duration-300"
                 >
-                  View Details
+                  <span data-i18n="packages.actions.viewDetails">{t('packages.actions.viewDetails')}</span>
                 </button>
                 
                 <button className={`
@@ -212,11 +213,11 @@ const Packages = () => {
                     : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
                   }
                 `}>
-                  Start Free Trial
+                  <span data-i18n="packages.actions.startFreeTrial">{t('packages.actions.startFreeTrial')}</span>
                 </button>
                 
                 <p className="text-xs text-gray-500 text-center mt-3">
-                  14-day free trial • No credit card required
+                  <span data-i18n="packages.actions.trialInfo">{t('packages.actions.trialInfo')}</span>
                 </p>
               </div>
             </div>
@@ -228,27 +229,27 @@ const Packages = () => {
             <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm">
               <MessageSquare className="w-8 h-8 text-gray-600" />
             </div>
-            <h3 className="text-2xl font-medium text-gray-900 mb-4">Need something custom?</h3>
-            <p className="text-gray-600 mb-8 leading-relaxed">
-              Every business is unique. Let us create a tailored solution that fits your specific requirements and budget.
+            <h3 className="text-2xl font-medium text-gray-900 mb-4" data-i18n="packages.custom.title">{t('packages.custom.title')}</h3>
+            <p className="text-gray-600 mb-8 leading-relaxed" data-i18n="packages.custom.subtitle">
+              {t('packages.custom.subtitle')}
             </p>
-            <button className="bg-pulse-500 text-white px-8 py-3 rounded-full font-medium hover:bg-pulse-600 transition-colors duration-300">
-              Get Custom Quote
+            <button className="bg-pulse-500 text-white px-8 py-3 rounded-full font-medium hover:bg-pulse-600 transition-colors duration-300" data-i18n="packages.custom.getQuote">
+              {t('packages.custom.getQuote')}
             </button>
           </div>
         </div>
 
         <div className="mt-20 pt-16 border-t border-gray-200">
           <div className="text-center mb-12">
-            <h3 className="text-2xl font-light text-gray-900 mb-4">What's included in every plan</h3>
+            <h3 className="text-2xl font-light text-gray-900 mb-4" data-i18n="packages.included.title">{t('packages.included.title')}</h3>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             {[
-              { title: "Free Setup", desc: "Professional onboarding included" },
-              { title: "Data Migration", desc: "We handle your data transfer" },
-              { title: "Training Included", desc: "Comprehensive user training" },
-              { title: "24/7 Support", desc: "Always here when you need us" }
+              t('packages.included.freeSetup'),
+              t('packages.included.dataMigration'),
+              t('packages.included.training'),
+              t('packages.included.support')
             ].map((item, index) => (
               <div key={index} className="p-6">
                 <div className="w-12 h-12 bg-pulse-100 rounded-xl flex items-center justify-center mx-auto mb-4">
@@ -266,8 +267,8 @@ const Packages = () => {
             <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <Check className="w-6 h-6 text-green-600" />
             </div>
-            <h4 className="text-lg font-medium text-gray-900 mb-2">30-Day Money-Back Guarantee</h4>
-            <p className="text-gray-600">Not satisfied? Get a full refund within 30 days, no questions asked.</p>
+            <h4 className="text-lg font-medium text-gray-900 mb-2" data-i18n="packages.guarantee.title">{t('packages.guarantee.title')}</h4>
+            <p className="text-gray-600" data-i18n="packages.guarantee.subtitle">{t('packages.guarantee.subtitle')}</p>
           </div>
         </div>
       </div>

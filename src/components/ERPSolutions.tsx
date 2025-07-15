@@ -2,15 +2,17 @@
 import React, { useState } from "react";
 import { Calculator, Users, ShoppingCart, Package, Factory, Wrench, ArrowRight } from "lucide-react";
 import DetailModal from "./DetailModal";
+import { useTranslation } from "@/lib/translations";
 
 const ERPSolutions = () => {
+  const { t } = useTranslation();
   const [selectedSolution, setSelectedSolution] = useState<any>(null);
   
   const solutions = [
     {
       icon: Calculator,
-      title: "Accounting & Finance",
-      description: "Complete financial management with real-time insights.",
+      title: t('erp.accounting.title'),
+      description: t('erp.accounting.description'),
       capabilities: [
         "Real-time Financial Reporting & Analytics",
         "Multi-currency Support & Conversion",
@@ -21,13 +23,13 @@ const ERPSolutions = () => {
         "Financial Audit Trail & Controls",
         "Integration with Banking & Payment Systems"
       ],
-      timeline: "Full Integration",
+      timeline: t('erp.accounting.timeline'),
       fullDescription: "Complete financial management and reporting system with real-time insights and automated processes for comprehensive business control. Our accounting suite provides complete visibility into your financial operations with automated workflows, intelligent reporting, and seamless integration with banking and payment systems."
     },
     {
       icon: Users,
-      title: "Human Resources",
-      description: "End-to-end HR management for the complete employee lifecycle.",
+      title: t('erp.hr.title'),
+      description: t('erp.hr.description'),
       capabilities: [
         "Employee Self-service Portal & Mobile App",
         "Automated Payroll & Tax Calculations",
@@ -38,13 +40,13 @@ const ERPSolutions = () => {
         "Training & Development Programs",
         "HR Analytics & Workforce Planning"
       ],
-      timeline: "Complete HR Suite",
+      timeline: t('erp.hr.timeline'),
       fullDescription: "Comprehensive HR management system covering the entire employee lifecycle from recruitment to retirement with advanced analytics. Our HR suite transforms people management with automated workflows, self-service capabilities, and data-driven insights that help you attract, retain, and develop top talent."
     },
     {
       icon: ShoppingCart,
-      title: "Sales & CRM",
-      description: "AI-powered sales and customer relationship management.",
+      title: t('erp.sales.title'),
+      description: t('erp.sales.description'),
       capabilities: [
         "Lead Tracking & Opportunity Management",
         "Advanced Sales Pipeline & Forecasting",
@@ -55,13 +57,13 @@ const ERPSolutions = () => {
         "Sales Team Performance Analytics",
         "Mobile CRM & Field Sales Tools"
       ],
-      timeline: "Sales Optimization",
+      timeline: t('erp.sales.timeline'),
       fullDescription: "End-to-end sales and customer relationship management with AI-powered insights and automation for maximum conversion rates. Our CRM platform provides complete customer visibility, automated sales processes, and intelligent insights that help you close more deals and build stronger customer relationships."
     },
     {
       icon: Package,
-      title: "Inventory Management",
-      description: "Smart inventory optimization with real-time tracking.",
+      title: t('erp.inventory.title'),
+      description: t('erp.inventory.description'),
       capabilities: [
         "AI-powered Stock Optimization & Forecasting",
         "Barcode & RFID Scanning Integration",
@@ -72,13 +74,13 @@ const ERPSolutions = () => {
         "Warehouse Layout & Pick Path Optimization",
         "Supplier Performance & Vendor Management"
       ],
-      timeline: "Smart Inventory",
+      timeline: t('erp.inventory.timeline'),
       fullDescription: "Advanced inventory and warehouse management with real-time tracking and optimization capabilities for maximum efficiency. Our inventory system uses AI to predict demand, optimize stock levels, and automate reordering processes while providing complete visibility across all locations and warehouses."
     },
     {
       icon: Factory,
-      title: "Manufacturing",
-      description: "Intelligent production management and quality control.",
+      title: t('erp.manufacturing.title'),
+      description: t('erp.manufacturing.description'),
       capabilities: [
         "Production Planning & Capacity Optimization",
         "Quality Control Workflows & Compliance",
@@ -89,13 +91,13 @@ const ERPSolutions = () => {
         "Lean Manufacturing & Waste Reduction",
         "Product Lifecycle & Engineering Change Management"
       ],
-      timeline: "Production Excellence",
+      timeline: t('erp.manufacturing.timeline'),
       fullDescription: "Complete production management solution that optimizes manufacturing processes and quality control with real-time monitoring. Our manufacturing module enables digital transformation with IoT integration, automated workflows, and real-time production tracking that maximizes efficiency and ensures consistent quality."
     },
     {
       icon: Wrench,
-      title: "Asset Management",
-      description: "Predictive asset management and maintenance optimization.",
+      title: t('erp.assets.title'),
+      description: t('erp.assets.description'),
       capabilities: [
         "Preventive & Predictive Maintenance Scheduling",
         "Asset Lifecycle Tracking & Depreciation",
@@ -106,16 +108,16 @@ const ERPSolutions = () => {
         "Mobile Maintenance & Field Service",
         "Asset ROI & Cost Analysis"
       ],
-      timeline: "Asset Optimization",
+      timeline: t('erp.assets.timeline'),
       fullDescription: "Comprehensive asset tracking and maintenance management to maximize equipment uptime and ROI with predictive analytics. Our asset management solution uses IoT sensors and machine learning to predict failures before they occur, optimize maintenance schedules, and ensure maximum equipment availability and performance."
     }
   ];
 
   const integrationStats = [
-    { metric: "100%", label: "Module Integration", desc: "Seamless data flow across all modules" },
-    { metric: "Real-time", label: "Data Updates", desc: "Instant synchronization everywhere" },
-    { metric: "Single", label: "Database", desc: "Unified source of truth for all data" },
-    { metric: "Custom", label: "Workflows", desc: "Tailored to your business processes" }
+    t('erp.integration.moduleIntegration'),
+    t('erp.integration.dataUpdates'),
+    t('erp.integration.database'),
+    t('erp.integration.workflows')
   ];
 
   const headerBg = {
@@ -132,14 +134,13 @@ const ERPSolutions = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
           <div className="section-header-badge animate-badge-float mb-8">
             <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-pulse-500 text-white mr-3 text-sm font-bold">05</span>
-            <span className="font-semibold">ERP Solutions</span>
+            <span className="font-semibold" data-i18n="erp.badge">{t('erp.badge')}</span>
           </div>
-          <h2 className="section-header-title animate-header-glow">
-            Complete business<br />
-            <span className="font-medium">solutions</span>
+          <h2 className="section-header-title animate-header-glow" data-i18n="erp.title">
+            <span dangerouslySetInnerHTML={{ __html: t('erp.title') }} />
           </h2>
-          <p className="section-header-subtitle">
-            Integrated modules that work together seamlessly to power every aspect of your business operations
+          <p className="section-header-subtitle" data-i18n="erp.subtitle">
+            {t('erp.subtitle')}
           </p>
         </div>
       </div>
@@ -173,7 +174,7 @@ const ERPSolutions = () => {
                   className="flex items-center text-pulse-500 font-medium text-sm group-hover:text-pulse-600 transition-colors duration-300 cursor-pointer mt-auto"
                   onClick={() => setSelectedSolution(solution)}
                 >
-                  Explore module details
+                  <span data-i18n="common.viewDetails">{t('common.viewDetails')}</span>
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                 </div>
               </div>
@@ -184,9 +185,9 @@ const ERPSolutions = () => {
         <div className="opacity-0 animate-fade-scale" style={{ animationDelay: "0.4s" }}>
           <div className="bg-white rounded-3xl p-12 border border-gray-200 shadow-sm">
             <div className="text-center mb-12">
-              <h3 className="text-2xl font-light text-gray-900 mb-4">Seamless integration across all modules</h3>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                All modules share data in real-time, providing a unified view of your business operations with complete transparency and control
+              <h3 className="text-2xl font-light text-gray-900 mb-4" data-i18n="erp.integration.title">{t('erp.integration.title')}</h3>
+              <p className="text-gray-600 max-w-2xl mx-auto" data-i18n="erp.integration.subtitle">
+                {t('erp.integration.subtitle')}
               </p>
             </div>
             
@@ -208,16 +209,16 @@ const ERPSolutions = () => {
             <div className="absolute bottom-0 left-0 w-24 h-24 bg-pulse-500 rounded-full opacity-10"></div>
             
             <div className="relative z-10">
-              <h3 className="text-2xl font-light mb-4">Ready for complete business integration?</h3>
-              <p className="text-white/80 mb-8 max-w-2xl mx-auto">
-                Experience the power of fully integrated ERP modules working together to streamline your entire business operation
+              <h3 className="text-2xl font-light mb-4" data-i18n="erp.cta.title">{t('erp.cta.title')}</h3>
+              <p className="text-white/80 mb-8 max-w-2xl mx-auto" data-i18n="erp.cta.subtitle">
+                {t('erp.cta.subtitle')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-white text-gray-900 px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition-all duration-300">
-                  View Integration Demo
+                <button className="bg-white text-gray-900 px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition-all duration-300" data-i18n="erp.cta.viewDemo">
+                  {t('erp.cta.viewDemo')}
                 </button>
-                <button className="border border-white/30 text-white px-8 py-3 rounded-full font-medium hover:bg-white/10 transition-all duration-300">
-                  Download Module Guide
+                <button className="border border-white/30 text-white px-8 py-3 rounded-full font-medium hover:bg-white/10 transition-all duration-300" data-i18n="erp.cta.downloadGuide">
+                  {t('erp.cta.downloadGuide')}
                 </button>
               </div>
             </div>

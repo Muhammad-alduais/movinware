@@ -1,7 +1,10 @@
 import React from "react";
 import { Twitter, Linkedin, Github, Mail, Phone, MapPin } from "lucide-react";
+import { useTranslation } from "@/lib/translations";
 
 const Footer = () => {
+  const { t } = useTranslation();
+  
   const socialLinks = [
     { icon: Twitter, href: "#", label: "Twitter" },
     { icon: Linkedin, href: "#", label: "LinkedIn" },
@@ -9,16 +12,16 @@ const Footer = () => {
   ];
 
   const quickLinks = [
-    { name: "Platform", href: "#platform" },
-    { name: "Industries", href: "#industries" },
-    { name: "Services", href: "#services" },
-    { name: "Contact", href: "#contact" }
+    { name: t('nav.platform'), href: "#platform" },
+    { name: t('nav.industries'), href: "#industries" },
+    { name: t('nav.services'), href: "#services" },
+    { name: t('nav.contact'), href: "#contact" }
   ];
 
   const contactInfo = [
-    { icon: Mail, text: "info@movinware.com" },
-    { icon: Phone, text: "+966 561820949" },
-    { icon: MapPin, text: "Online" }
+    { icon: Mail, text: t('contact.info.email') },
+    { icon: Phone, text: t('contact.info.phone') },
+    { icon: MapPin, text: t('contact.info.location') }
   ];
 
   return (
@@ -46,8 +49,7 @@ const Footer = () => {
                 <span className="text-2xl font-bold text-white">MovinWare</span>
               </div>
               <p className="text-gray-300 leading-relaxed mb-8 max-w-md">
-                AI-powered ERP solutions designed for modern businesses. 
-                Streamline operations, boost efficiency, and future-proof your business with intelligent automation.
+                <span data-i18n="footer.description">{t('footer.description')}</span>
               </p>
               
               {/* Social links */}
@@ -67,7 +69,7 @@ const Footer = () => {
 
             {/* Quick links */}
             <div>
-              <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
+              <h3 className="text-lg font-semibold mb-6" data-i18n="footer.quickLinks">{t('footer.quickLinks')}</h3>
               <ul className="space-y-4">
                 {quickLinks.map((link, index) => (
                   <li key={index}>
@@ -84,7 +86,7 @@ const Footer = () => {
 
             {/* Contact info */}
             <div>
-              <h3 className="text-lg font-semibold mb-6">Contact</h3>
+              <h3 className="text-lg font-semibold mb-6" data-i18n="footer.contact">{t('footer.contact')}</h3>
               <ul className="space-y-4">
                 {contactInfo.map((contact, index) => (
                   <li key={index} className="flex items-center text-gray-300">
@@ -102,10 +104,10 @@ const Footer = () => {
           <div className="max-w-6xl mx-auto px-6 py-6">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <div className="text-sm text-gray-400">
-                © 2025 MovinWare. All rights reserved.
+                © 2025 MovinWare. <span data-i18n="footer.rights">{t('footer.rights')}</span>
               </div>
               <div className="text-sm text-gray-400">
-                Built entirely by{" "}
+                <span data-i18n="footer.builtBy">{t('footer.builtBy')}</span>{" "}
                 <span className="text-pulse-500 font-medium">Muhammad Al-Duais</span>
               </div>
             </div>

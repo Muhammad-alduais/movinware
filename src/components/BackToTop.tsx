@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { ArrowUp } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useTranslation } from "@/lib/translations";
 
 const BackToTop = () => {
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
   const [isScrolling, setIsScrolling] = useState(false);
 
@@ -59,7 +61,7 @@ const BackToTop = () => {
         "active:scale-95",
         isScrolling && "animate-pulse-glow"
       )}
-      aria-label="Back to top"
+      aria-label={t('common.backToTop')}
     >
       <div className="flex items-center justify-center w-full h-full">
         <ArrowUp 

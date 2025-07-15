@@ -2,8 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 import LottieAnimation from "./LottieAnimation";
+import { useTranslation } from "@/lib/translations";
 
 const Hero = () => {
+  const { t } = useTranslation();
   const containerRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
   const [lottieData, setLottieData] = useState<any>(null);
@@ -119,23 +121,26 @@ const Hero = () => {
             <div 
               className="pulse-chip mb-3 sm:mb-6 opacity-0 animate-fade-in" 
               style={{ animationDelay: "0.1s" }}
+              data-i18n="hero.badge"
             >
               <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-pulse-500 text-white mr-2">01</span>
-              <span>ERP Solutions</span>
+              <span>{t('hero.badge')}</span>
             </div>
             
             <h1 
               className="section-title text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-tight opacity-0 animate-fade-in" 
               style={{ animationDelay: "0.3s" }}
+              data-i18n="hero.title"
+              dangerouslySetInnerHTML={{ __html: t('hero.title') }}
             >
-              Intelligent Operations.<br className="hidden sm:inline" />Seamless Transformation
             </h1>
             
             <p 
               style={{ animationDelay: "0.5s" }} 
               className="section-subtitle mt-3 sm:mt-6 mb-4 sm:mb-8 leading-relaxed opacity-0 animate-fade-in text-gray-950 font-normal text-base sm:text-lg text-left"
+              data-i18n="hero.subtitle"
             >
-              AI-powered ERP system designed for your workflow. Streamline operations, boost efficiency, and future-proof your business with MovinWare's intelligent solutions.
+              {t('hero.subtitle')}
             </p>
             
             <div 
@@ -157,7 +162,7 @@ const Hero = () => {
                   border: '1px solid white',
                 }}
               >
-                Start Your Journey
+                <span data-i18n="hero.cta">{t('hero.cta')}</span>
                 <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
               </a>
             </div>

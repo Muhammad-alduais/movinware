@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitcher";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -86,6 +87,9 @@ const Navbar = () => {
           <a href="#packages" className="nav-link">Packages</a>
           <a href="#contact" className="nav-link">Contact</a>
         </nav>
+
+        {/* Language Switcher - Desktop */}
+        <LanguageSwitcher className="hidden md:block" />
 
         {/* Language Switcher - Desktop */}
         <LanguageSwitcher className="hidden md:block" />
@@ -201,6 +205,11 @@ const Navbar = () => {
             Contact
           </a>
         </nav>
+        
+        {/* Language Switcher - Mobile */}
+        <div className="mt-8 px-4">
+          <LanguageSwitcher className="w-full" />
+        </div>
         
         {/* Language Switcher - Mobile */}
         <div className="mt-8 px-4">

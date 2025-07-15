@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { useTranslation } from "@/lib/translations";
 
 interface TestimonialProps {
   content: string;
@@ -8,29 +9,6 @@ interface TestimonialProps {
   backgroundImage?: string;
 }
 
-const testimonials: TestimonialProps[] = [
-  {
-    content: "MovinWare transformed our production operations, streamlining workflows while our team focuses on strategic growth. 40% increase in efficiency within two months.",
-    author: "Sarah Chen",
-    role: "VP of Operations, Axion Manufacturing",
-    gradient: "from-blue-700 via-indigo-800 to-purple-900",
-    backgroundImage: "/background-section1.png"
-  },
-  {
-    content: "Implementing MovinWare in our logistics centers reduced operational costs by 35% while improving accuracy. The AI-powered insights are game-changing.",
-    author: "Michael Rodriguez",
-    role: "Director of Logistics, GlobalShip",
-    gradient: "from-green-600 via-teal-700 to-blue-800",
-    backgroundImage: "/background-section2.png"
-  },
-  {
-    content: "As a mid-size business, we never thought advanced ERP would be accessible to us. MovinWare changed that with its intuitive design and affordable pricing.",
-    author: "Jason Lee",
-    role: "CEO, Innovative Solutions Inc.",
-    gradient: "from-orange-600 via-red-500 to-purple-600",
-    backgroundImage: "/background-section3.png"
-  }
-];
 
 const TestimonialCard = ({
   content,
@@ -59,19 +37,43 @@ const TestimonialCard = ({
 };
 
 const Testimonials = () => {
+  const { t } = useTranslation();
   const sectionRef = useRef<HTMLDivElement>(null);
 
+  const testimonials: TestimonialProps[] = [
+    {
+      content: t('testimonials.testimonial1.content'),
+      author: t('testimonials.testimonial1.author'),
+      role: t('testimonials.testimonial1.role'),
+      gradient: "from-blue-700 via-indigo-800 to-purple-900",
+      backgroundImage: "/background-section1.png"
+    },
+    {
+      content: t('testimonials.testimonial2.content'),
+      author: t('testimonials.testimonial2.author'),
+      role: t('testimonials.testimonial2.role'),
+      gradient: "from-green-600 via-teal-700 to-blue-800",
+      backgroundImage: "/background-section2.png"
+    },
+    {
+      content: t('testimonials.testimonial3.content'),
+      author: t('testimonials.testimonial3.author'),
+      role: t('testimonials.testimonial3.role'),
+      gradient: "from-orange-600 via-red-500 to-purple-600",
+      backgroundImage: "/background-section3.png"
+    }
+  ];
   return (
     <section className="py-12 bg-white relative" id="testimonials" ref={sectionRef}>
       <div className="section-container opacity-0 animate-on-scroll">
         <div className="flex items-center gap-4 mb-6">
           <div className="pulse-chip">
             <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-pulse-500 text-white mr-2">04</span>
-            <span>Testimonials</span>
+            <span data-i18n="testimonials.badge">{t('testimonials.badge')}</span>
           </div>
         </div>
         
-        <h2 className="text-5xl font-display font-bold mb-12 text-left">What others say</h2>
+        <h2 className="text-5xl font-display font-bold mb-12 text-left" data-i18n="testimonials.title">{t('testimonials.title')}</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (

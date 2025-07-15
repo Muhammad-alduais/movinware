@@ -32,6 +32,12 @@ export const translations: Record<string, Translation> = {
       badge: "360° VALUE",
       title: "We don't just build software",
       subtitle: "We build your business future",
+      cards: {
+        aiFeatures: "AI Features",
+        unmatchedSpeed: "Unmatched Speed", 
+        culturalFit: "Cultural Fit",
+        easyAdoption: "Easy Adoption"
+      },
       aiFeatures: {
         title: "Intelligent automation that learns from your business",
         features: [
@@ -236,7 +242,22 @@ export const translations: Record<string, Translation> = {
     // Testimonials
     testimonials: {
       badge: "Testimonials",
-      title: "What others say"
+      title: "What others say",
+      testimonial1: {
+        content: "MovinWare transformed our production operations, streamlining workflows while our team focuses on strategic growth. 40% increase in efficiency within two months.",
+        author: "Sarah Chen",
+        role: "VP of Operations, Axion Manufacturing"
+      },
+      testimonial2: {
+        content: "Implementing MovinWare in our logistics centers reduced operational costs by 35% while improving accuracy. The AI-powered insights are game-changing.",
+        author: "Michael Rodriguez", 
+        role: "Director of Logistics, GlobalShip"
+      },
+      testimonial3: {
+        content: "As a mid-size business, we never thought advanced ERP would be accessible to us. MovinWare changed that with its intuitive design and affordable pricing.",
+        author: "Jason Lee",
+        role: "CEO, Innovative Solutions Inc."
+      }
     },
     
     // Contact
@@ -328,6 +349,12 @@ export const translations: Record<string, Translation> = {
       badge: "القيمة الشاملة",
       title: "نحن لا نبني البرمجيات فقط",
       subtitle: "نحن نبني مستقبل عملك",
+      cards: {
+        aiFeatures: "ميزات الذكاء الاصطناعي",
+        unmatchedSpeed: "سرعة لا مثيل لها",
+        culturalFit: "التوافق الثقافي", 
+        easyAdoption: "اعتماد سهل"
+      },
       aiFeatures: {
         title: "أتمتة ذكية تتعلم من عملك",
         features: [
@@ -529,10 +556,25 @@ export const translations: Record<string, Translation> = {
       }
     },
     
-    // Testimonials
+    // Testimonials  
     testimonials: {
       badge: "الشهادات",
-      title: "ما يقوله الآخرون"
+      title: "ما يقوله الآخرون",
+      testimonial1: {
+        content: "حولت MovinWare عمليات الإنتاج لدينا، وبسطت سير العمل بينما يركز فريقنا على النمو الاستراتيجي. زيادة 40% في الكفاءة خلال شهرين.",
+        author: "سارة تشين",
+        role: "نائب رئيس العمليات، أكسيون للتصنيع"
+      },
+      testimonial2: {
+        content: "تنفيذ MovinWare في مراكز اللوجستيات لدينا قلل التكاليف التشغيلية بنسبة 35% مع تحسين الدقة. الرؤى المدعومة بالذكاء الاصطناعي تغير قواعد اللعبة.",
+        author: "مايكل رودريغيز",
+        role: "مدير اللوجستيات، GlobalShip"
+      },
+      testimonial3: {
+        content: "كشركة متوسطة الحجم، لم نعتقد أبداً أن تخطيط موارد المؤسسات المتقدم سيكون متاحاً لنا. غيرت MovinWare ذلك بتصميمها البديهي والأسعار المعقولة.",
+        author: "جيسون لي",
+        role: "الرئيس التنفيذي، شركة الحلول المبتكرة"
+      }
     },
     
     // Contact

@@ -47,7 +47,7 @@ const Navbar = () => {
       <div className="container flex items-center justify-between px-4 sm:px-6 lg:px-8">
         <a 
           href="#" 
-          className="flex items-center space-x-3"
+          className="flex items-center space-x-3 rtl:space-x-reverse rtl:flex-row-reverse"
           onClick={(e) => {
             e.preventDefault();
             scrollToTop();
@@ -63,11 +63,11 @@ const Navbar = () => {
               </g>
             </svg>
           </div>
-          <div className="text-2xl font-bold text-gray-900">MovinWare</div>
+          <div className="text-2xl font-bold text-gray-900 rtl:mr-3 rtl:ml-0">MovinWare</div>
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-8">
+        <nav className="hidden md:flex space-x-8 rtl:space-x-reverse">
           <a 
             href="#" 
             className="nav-link"
@@ -102,11 +102,11 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       <div className={cn(
-        "fixed inset-0 z-40 bg-white flex flex-col pt-16 px-6 md:hidden transition-all duration-300 ease-in-out",
+        "fixed inset-0 z-40 bg-white flex flex-col pt-16 px-6 md:hidden transition-all duration-300 ease-in-out rtl:text-right",
         isMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
       )}>
         {/* Mobile Header with Close Button */}
-        <div className="flex items-center justify-between py-4 border-b border-gray-200 mb-8">
+        <div className="flex items-center justify-between py-4 border-b border-gray-200 mb-8 rtl:flex-row-reverse">
           <h2 className="text-xl font-semibold text-gray-900">Menu</h2>
           <button 
             onClick={toggleMenu}
@@ -117,10 +117,10 @@ const Navbar = () => {
           </button>
         </div>
         
-        <nav className="flex flex-col space-y-6">
+        <nav className="flex flex-col space-y-6 rtl:text-right">
           <a 
             href="#" 
-            className="text-lg font-medium py-4 px-4 rounded-lg hover:bg-gray-100 transition-colors duration-200" 
+            className="text-lg font-medium py-4 px-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 rtl:text-right" 
             onClick={(e) => {
               e.preventDefault();
               scrollToTop();
@@ -132,7 +132,7 @@ const Navbar = () => {
           </a>
           <a 
             href="#value" 
-            className="text-lg font-medium py-4 px-4 rounded-lg hover:bg-gray-100 transition-colors duration-200" 
+            className="text-lg font-medium py-4 px-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 rtl:text-right" 
             onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';
@@ -142,7 +142,7 @@ const Navbar = () => {
           </a>
           <a 
             href="#platform" 
-            className="text-lg font-medium py-4 px-4 rounded-lg hover:bg-gray-100 transition-colors duration-200" 
+            className="text-lg font-medium py-4 px-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 rtl:text-right" 
             onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';
@@ -152,7 +152,7 @@ const Navbar = () => {
           </a>
           <a 
             href="#industries" 
-            className="text-lg font-medium py-4 px-4 rounded-lg hover:bg-gray-100 transition-colors duration-200" 
+            className="text-lg font-medium py-4 px-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 rtl:text-right" 
             onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';
@@ -162,7 +162,7 @@ const Navbar = () => {
           </a>
           <a 
             href="#erp-solutions" 
-            className="text-lg font-medium py-4 px-4 rounded-lg hover:bg-gray-100 transition-colors duration-200" 
+            className="text-lg font-medium py-4 px-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 rtl:text-right" 
             onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';
@@ -172,7 +172,7 @@ const Navbar = () => {
           </a>
           <a 
             href="#services" 
-            className="text-lg font-medium py-4 px-4 rounded-lg hover:bg-gray-100 transition-colors duration-200" 
+            className="text-lg font-medium py-4 px-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 rtl:text-right" 
             onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';
@@ -182,7 +182,7 @@ const Navbar = () => {
           </a>
           <a 
             href="#packages" 
-            className="text-lg font-medium py-4 px-4 rounded-lg hover:bg-gray-100 transition-colors duration-200" 
+            className="text-lg font-medium py-4 px-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 rtl:text-right" 
             onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';
@@ -192,7 +192,7 @@ const Navbar = () => {
           </a>
           <a 
             href="#contact" 
-            className="text-lg font-medium py-4 px-4 rounded-lg hover:bg-gray-100 transition-colors duration-200" 
+            className="text-lg font-medium py-4 px-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 rtl:text-right" 
             onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';
@@ -203,12 +203,12 @@ const Navbar = () => {
         </nav>
         
         {/* Language Switcher - Mobile */}
-        <div className="mt-8 px-4">
+        <div className="mt-8 px-4 rtl:text-right">
           <LanguageSwitcher className="w-full" />
         </div>
         
         {/* Mobile Footer */}
-        <div className="mt-auto pb-8">
+        <div className="mt-auto pb-8 rtl:text-right">
           <div className="text-center text-sm text-gray-500">
             © 2025 MovinWare
           </div>

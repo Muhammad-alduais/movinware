@@ -227,22 +227,22 @@ This message was sent via the MovinWare contact form on ${new Date().toLocaleDat
         <div className="text-center mb-16 opacity-0 animate-on-scroll">
           <div className="pulse-chip mx-auto mb-4">
             <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-pulse-500 text-white mr-2">10</span>
-            <span data-i18n="contact.badge">{t('contact.badge')}</span>
+            <span data-i18n="contact.badge" className="rtl:mr-0 rtl:ml-2">{t('contact.badge')}</span>
           </div>
-          <h2 className="section-title mb-4" data-i18n="contact.title">{t('contact.title')}</h2>
+          <h2 className="section-title mb-4 rtl:text-right" data-i18n="contact.title">{t('contact.title')}</h2>
           <p className="section-subtitle mx-auto">
-            <span data-i18n="contact.subtitle">{t('contact.subtitle')}</span>
+            <span data-i18n="contact.subtitle" className="rtl:text-right">{t('contact.subtitle')}</span>
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div className="opacity-0 animate-on-scroll">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-6" data-i18n="contact.form.title">{t('contact.form.title')}</h3>
+            <h3 className="text-2xl font-semibold text-gray-900 mb-6 rtl:text-right" data-i18n="contact.form.title">{t('contact.form.title')}</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-700 mb-2 rtl:text-right">
                     <span data-i18n="contact.form.fullName">{t('contact.form.fullName')}</span> <span className="text-red-500">*</span>
                   </label>
                   <input 
@@ -250,12 +250,12 @@ This message was sent via the MovinWare contact form on ${new Date().toLocaleDat
                     name="fullName"
                     value={formData.fullName}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pulse-500 focus:border-transparent transition-all duration-200" 
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pulse-500 focus:border-transparent transition-all duration-200 rtl:text-right" 
                     required
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-700 mb-2 rtl:text-right">
                     <span data-i18n="contact.form.email">{t('contact.form.email')}</span> <span className="text-red-500">*</span>
                   </label>
                   <input 
@@ -263,40 +263,40 @@ This message was sent via the MovinWare contact form on ${new Date().toLocaleDat
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pulse-500 focus:border-transparent transition-all duration-200" 
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pulse-500 focus:border-transparent transition-all duration-200 rtl:text-right" 
                     required
                   />
                 </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2" data-i18n="contact.form.company">{t('contact.form.company')}</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2 rtl:text-right" data-i18n="contact.form.company">{t('contact.form.company')}</label>
                   <input 
                     type="text" 
                     name="company"
                     value={formData.company}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pulse-500 focus:border-transparent transition-all duration-200" 
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pulse-500 focus:border-transparent transition-all duration-200 rtl:text-right" 
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2" data-i18n="contact.form.phone">{t('contact.form.phone')}</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2 rtl:text-right" data-i18n="contact.form.phone">{t('contact.form.phone')}</label>
                   <input 
                     type="tel" 
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pulse-500 focus:border-transparent transition-all duration-200" 
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pulse-500 focus:border-transparent transition-all duration-200 rtl:text-right" 
                   />
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2" data-i18n="contact.form.inquiryType">{t('contact.form.inquiryType')}</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2 rtl:text-right" data-i18n="contact.form.inquiryType">{t('contact.form.inquiryType')}</label>
                 <select 
                   name="inquiryType"
                   value={formData.inquiryType}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pulse-500 focus:border-transparent transition-all duration-200"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pulse-500 focus:border-transparent transition-all duration-200 rtl:text-right"
                 >
                   <option>General Inquiry</option>
                   <option>ERP Implementation</option>
@@ -307,7 +307,7 @@ This message was sent via the MovinWare contact form on ${new Date().toLocaleDat
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 mb-2 rtl:text-right">
                   <span data-i18n="contact.form.message">{t('contact.form.message')}</span> <span className="text-red-500">*</span>
                 </label>
                 <textarea 
@@ -315,7 +315,7 @@ This message was sent via the MovinWare contact form on ${new Date().toLocaleDat
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pulse-500 focus:border-transparent transition-all duration-200" 
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pulse-500 focus:border-transparent transition-all duration-200 rtl:text-right" 
                   placeholder={t('contact.form.messagePlaceholder')}
                   required
                 ></textarea>
@@ -389,8 +389,8 @@ This message was sent via the MovinWare contact form on ${new Date().toLocaleDat
           {/* Contact Info & Quick Actions */}
           <div className="space-y-8">
             {/* Contact Information */}
-            <div className="opacity-0 animate-on-scroll" style={{ animationDelay: "0.2s" }}>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-6" data-i18n="contact.info.title">{t('contact.info.title')}</h3>
+            <div className="opacity-0 animate-on-scroll rtl:text-right" style={{ animationDelay: "0.2s" }}>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-6 rtl:text-right" data-i18n="contact.info.title">{t('contact.info.title')}</h3>
               <div className="space-y-4">
                 {contactInfo.map((info, index) => (
                   <a 
@@ -398,10 +398,10 @@ This message was sent via the MovinWare contact form on ${new Date().toLocaleDat
                     href={info.link}
                     className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200"
                   >
-                    <div className="flex items-center justify-center w-10 h-10 bg-pulse-100 rounded-lg mr-4">
+                    <div className="flex items-center justify-center w-10 h-10 bg-pulse-100 rounded-lg mr-4 rtl:mr-0 rtl:ml-4">
                       <info.icon className="w-5 h-5 text-pulse-500" />
                     </div>
-                    <div>
+                    <div className="rtl:text-right">
                       <p className="font-medium text-gray-900">{info.title}</p>
                       <p className="text-gray-600">{info.value}</p>
                     </div>
@@ -411,8 +411,8 @@ This message was sent via the MovinWare contact form on ${new Date().toLocaleDat
             </div>
 
             {/* Quick Actions */}
-            <div className="opacity-0 animate-on-scroll" style={{ animationDelay: "0.4s" }}>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-6" data-i18n="contact.quickActions.title">{t('contact.quickActions.title')}</h3>
+            <div className="opacity-0 animate-on-scroll rtl:text-right" style={{ animationDelay: "0.4s" }}>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-6 rtl:text-right" data-i18n="contact.quickActions.title">{t('contact.quickActions.title')}</h3>
               <div className="space-y-4">
                 {quickActions.map((action, index) => (
                   <button 
@@ -420,10 +420,10 @@ This message was sent via the MovinWare contact form on ${new Date().toLocaleDat
                     onClick={action.action}
                     className="w-full flex items-center p-4 bg-white border border-gray-200 rounded-lg hover:shadow-elegant-hover transition-all duration-200"
                   >
-                    <div className="flex items-center justify-center w-10 h-10 bg-pulse-100 rounded-lg mr-4">
+                    <div className="flex items-center justify-center w-10 h-10 bg-pulse-100 rounded-lg mr-4 rtl:mr-0 rtl:ml-4">
                       <action.icon className="w-5 h-5 text-pulse-500" />
                     </div>
-                    <div className="text-left">
+                    <div className="text-left rtl:text-right">
                       <p className="font-medium text-gray-900">{action.title}</p>
                       <p className="text-sm text-gray-600">{action.description}</p>
                     </div>

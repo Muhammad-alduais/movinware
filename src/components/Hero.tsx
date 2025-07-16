@@ -119,7 +119,7 @@ const Hero = () => {
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-center">
           <div className="w-full lg:w-1/2">
             <div 
-              className="pulse-chip mb-3 sm:mb-6 opacity-0 animate-fade-in" 
+              className="pulse-chip mb-3 sm:mb-6 opacity-0 animate-fade-in rtl:text-right" 
               style={{ animationDelay: "0.1s" }}
               data-i18n="hero.badge"
             >
@@ -128,7 +128,7 @@ const Hero = () => {
             </div>
             
             <h1 
-              className="section-title text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-tight opacity-0 animate-fade-in" 
+              className="section-title text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-tight opacity-0 animate-fade-in rtl:text-right" 
               style={{ animationDelay: "0.3s" }}
               data-i18n="hero.title"
               dangerouslySetInnerHTML={{ __html: t('hero.title') }}
@@ -137,14 +137,14 @@ const Hero = () => {
             
             <p 
               style={{ animationDelay: "0.5s" }} 
-              className="section-subtitle mt-3 sm:mt-6 mb-4 sm:mb-8 leading-relaxed opacity-0 animate-fade-in text-gray-950 font-normal text-base sm:text-lg text-left"
+              className="section-subtitle mt-3 sm:mt-6 mb-4 sm:mb-8 leading-relaxed opacity-0 animate-fade-in text-gray-950 font-normal text-base sm:text-lg text-left rtl:text-right"
               data-i18n="hero.subtitle"
             >
               {t('hero.subtitle')}
             </p>
             
             <div 
-              className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in" 
+              className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in rtl:flex-row-reverse" 
               style={{ animationDelay: "0.7s" }}
             >
               <a 

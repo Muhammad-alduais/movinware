@@ -68,12 +68,12 @@ const Testimonials = () => {
       <div className="section-container opacity-0 animate-on-scroll">
         <div className="flex items-center gap-4 mb-6">
           <div className="pulse-chip">
-            <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-pulse-500 text-white mr-2">04</span>
+            <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-pulse-500 text-white mr-2 rtl:mr-0 rtl:ml-2">04</span>
             <span data-i18n="testimonials.badge">{t('testimonials.badge')}</span>
           </div>
         </div>
         
-        <h2 className="text-5xl font-display font-bold mb-12 text-left" data-i18n="testimonials.title">{t('testimonials.title')}</h2>
+        <h2 className="text-5xl font-display font-bold mb-12 text-left rtl:text-right" data-i18n="testimonials.title">{t('testimonials.title')}</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (

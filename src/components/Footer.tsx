@@ -35,8 +35,8 @@ const Footer = () => {
         <div className="max-w-6xl mx-auto px-6 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
             {/* Brand section */}
-            <div className="lg:col-span-2">
-              <div className="flex items-center mb-6">
+            <div className="lg:col-span-2 rtl:text-right">
+              <div className="flex items-center mb-6 rtl:flex-row-reverse">
                 <div className="w-8 h-8 text-white mr-3">
                   <svg viewBox="0 0 494.95 492.9" fill="currentColor" className="w-full h-full">
                     <g>
@@ -46,9 +46,9 @@ const Footer = () => {
                     </g>
                   </svg>
                 </div>
-                <span className="text-2xl font-bold text-white">MovinWare</span>
+                <span className="text-2xl font-bold text-white rtl:mr-3 rtl:ml-0">MovinWare</span>
               </div>
-              <p className="text-gray-300 leading-relaxed mb-8 max-w-md">
+              <p className="text-gray-300 leading-relaxed mb-8 max-w-md rtl:text-right">
                 <span data-i18n="footer.description">{t('footer.description')}</span>
               </p>
               
@@ -69,13 +69,13 @@ const Footer = () => {
 
             {/* Quick links */}
             <div>
-              <h3 className="text-lg font-semibold mb-6" data-i18n="footer.quickLinks">{t('footer.quickLinks')}</h3>
+              <h3 className="text-lg font-semibold mb-6 rtl:text-right" data-i18n="footer.quickLinks">{t('footer.quickLinks')}</h3>
               <ul className="space-y-4">
                 {quickLinks.map((link, index) => (
                   <li key={index}>
                     <a
                       href={link.href}
-                      className="text-gray-300 hover:text-white transition-colors duration-300 hover:translate-x-1 inline-block"
+                      className="text-gray-300 hover:text-white transition-colors duration-300 hover:translate-x-1 inline-block rtl:text-right rtl:hover:-translate-x-1"
                     >
                       {link.name}
                     </a>
@@ -86,11 +86,11 @@ const Footer = () => {
 
             {/* Contact info */}
             <div>
-              <h3 className="text-lg font-semibold mb-6" data-i18n="footer.contact">{t('footer.contact')}</h3>
+              <h3 className="text-lg font-semibold mb-6 rtl:text-right" data-i18n="footer.contact">{t('footer.contact')}</h3>
               <ul className="space-y-4">
                 {contactInfo.map((contact, index) => (
-                  <li key={index} className="flex items-center text-gray-300">
-                    <contact.icon className="w-4 h-4 mr-3 text-pulse-500" />
+                  <li key={index} className="flex items-center text-gray-300 rtl:flex-row-reverse rtl:text-right">
+                    <contact.icon className="w-4 h-4 mr-3 text-pulse-500 rtl:mr-0 rtl:ml-3" />
                     <span className="text-sm">{contact.text}</span>
                   </li>
                 ))}
@@ -103,10 +103,10 @@ const Footer = () => {
         <div className="border-t border-gray-800">
           <div className="max-w-6xl mx-auto px-6 py-6">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-              <div className="text-sm text-gray-400">
+              <div className="text-sm text-gray-400 rtl:text-right">
                 © 2025 MovinWare. <span data-i18n="footer.rights">{t('footer.rights')}</span>
               </div>
-              <div className="text-sm text-gray-400">
+              <div className="text-sm text-gray-400 rtl:text-right">
                 <span data-i18n="footer.builtBy">{t('footer.builtBy')}</span>{" "}
                 <span className="text-pulse-500 font-medium">Muhammad Al-Duais</span>
               </div>

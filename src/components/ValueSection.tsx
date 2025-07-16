@@ -107,7 +107,7 @@ const ValueSection = () => {
             <h2 className="section-title text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-1 md:mb-2" data-i18n="value.title">
               {t('value.title')}
             </h2>
-            <p className="text-xl text-gray-600 mb-4" data-i18n="value.subtitle">
+            <p className="text-xl text-gray-600 mb-4 rtl:text-right" data-i18n="value.subtitle">
               {t('value.subtitle')}
             </p>
           </div>
@@ -141,10 +141,10 @@ const ValueSection = () => {
               
               <div className="relative z-10 p-5 sm:p-6 md:p-8 h-full flex items-center">
                 <div className="max-w-lg">
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-display text-white font-bold leading-tight mb-4" data-i18n="value.aiFeatures.title">
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-display text-white font-bold leading-tight mb-4 rtl:text-right" data-i18n="value.aiFeatures.title">
                     {t('value.aiFeatures.title')}
                   </h3>
-                  <ul className="text-white/90 space-y-2">
+                  <ul className="text-white/90 space-y-2 rtl:text-right">
                     {t('value.aiFeatures.features').map((feature: string, index: number) => (
                       <li key={index}>{feature}</li>
                     ))}
@@ -182,10 +182,10 @@ const ValueSection = () => {
               
               <div className="relative z-10 p-5 sm:p-6 md:p-8 h-full flex items-center">
                 <div className="max-w-lg">
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-display text-white font-bold leading-tight mb-4" data-i18n="value.speed.title">
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-display text-white font-bold leading-tight mb-4 rtl:text-right" data-i18n="value.speed.title">
                     {t('value.speed.title')}
                   </h3>
-                  <ul className="text-white/90 space-y-2">
+                  <ul className="text-white/90 space-y-2 rtl:text-right">
                     {t('value.speed.features').map((feature: string, index: number) => (
                       <li key={index}>{feature}</li>
                     ))}
@@ -223,10 +223,10 @@ const ValueSection = () => {
               
               <div className="relative z-10 p-5 sm:p-6 md:p-8 h-full flex items-center">
                 <div className="max-w-lg">
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-display text-white font-bold leading-tight mb-4" data-i18n="value.cultural.title">
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-display text-white font-bold leading-tight mb-4 rtl:text-right" data-i18n="value.cultural.title">
                     {t('value.cultural.title')}
                   </h3>
-                  <ul className="text-white/90 space-y-2">
+                  <ul className="text-white/90 space-y-2 rtl:text-right">
                     {t('value.cultural.features').map((feature: string, index: number) => (
                       <li key={index}>{feature}</li>
                     ))}
@@ -264,10 +264,10 @@ const ValueSection = () => {
               
               <div className="relative z-10 p-5 sm:p-6 md:p-8 h-full flex items-center">
                 <div className="max-w-lg">
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-display text-white font-bold leading-tight mb-4" data-i18n="value.adoption.title">
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-display text-white font-bold leading-tight mb-4 rtl:text-right" data-i18n="value.adoption.title">
                     {t('value.adoption.title')}
                   </h3>
-                  <ul className="text-white/90 space-y-2">
+                  <ul className="text-white/90 space-y-2 rtl:text-right">
                     {t('value.adoption.features').map((feature: string, index: number) => (
                       <li key={index}>{feature}</li>
                     ))}

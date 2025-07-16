@@ -187,13 +187,13 @@ const Packages = () => {
                 
                 <ul className="space-y-2 mb-6">
                   {Array.isArray(pkg.features) && pkg.features.slice(0, 4).map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-sm">
-                      <Check className="w-4 h-4 text-pulse-500 mr-2 flex-shrink-0" />
+                    <li key={featureIndex} className="flex items-center text-sm rtl:flex-row-reverse rtl:text-right">
+                      <Check className="w-4 h-4 text-pulse-500 mr-2 flex-shrink-0 rtl:mr-0 rtl:ml-2" />
                       <span className="text-gray-700">{feature}</span>
                     </li>
                   ))}
                   {Array.isArray(pkg.features) && pkg.features.length > 4 && (
-                    <li className="text-sm text-gray-500 pl-6">
+                    <li className="text-sm text-gray-500 pl-6 rtl:pl-0 rtl:pr-6 rtl:text-right">
                       +{pkg.features.length - 4} <span data-i18n="packages.moreFeatures">{t('packages.moreFeatures') || 'more features'}</span>
                     </li>
                   )}
@@ -215,8 +215,8 @@ const Packages = () => {
                 `}>
                   <span data-i18n="packages.actions.startFreeTrial">{t('packages.actions.startFreeTrial')}</span>
                 </button>
-                
-                <p className="text-xs text-gray-500 text-center mt-3">
+                <h3 className="text-xl font-medium text-gray-900 mb-2 rtl:text-right">{pkg.title}</h3>
+                <p className="text-gray-600 text-sm mb-4 rtl:text-right">{pkg.description}</p>
                   <span data-i18n="packages.actions.trialInfo">{t('packages.actions.trialInfo')}</span>
                 </p>
               </div>

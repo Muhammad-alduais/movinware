@@ -159,7 +159,7 @@ const ERPSolutions = () => {
                     <solution.icon className="w-7 h-7 text-gray-600 group-hover:text-pulse-500 transition-all duration-500" />
                   </div>
                   <div className="flex-1 min-w-0 rtl:text-right">
-                    <h3 className="text-xl font-medium text-gray-900 mb-3 pr-2 rtl:pr-0 rtl:pl-2 leading-tight">{solution.title}</h3>
+                    <h3 className="text-xl font-medium text-gray-900 mb-3 pr-2 rtl:pr-0 rtl:pl-2 leading-tight rtl:text-right">{solution.title}</h3>
                     <div className="mb-3">
                       <span className="text-xs text-pulse-500 font-medium bg-pulse-50 px-3 py-1 rounded-full inline-block whitespace-nowrap">
                         {solution.timeline}
@@ -168,7 +168,7 @@ const ERPSolutions = () => {
                   </div>
                 </div>
                 
-                <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow rtl:text-right rtl:leading-loose">{solution.description}</p>
+                <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow rtl:text-right">{solution.description}</p>
                 
                 <div 
                   className="flex items-center text-pulse-500 font-medium text-sm group-hover:text-pulse-600 transition-colors duration-300 cursor-pointer mt-auto rtl:flex-row-reverse rtl:text-right"

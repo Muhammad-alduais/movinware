@@ -186,13 +186,13 @@ const Packages = () => {
                 </div>
                 
                 <ul className="space-y-2 mb-6">
-                  {pkg.features.slice(0, 4).map((feature, featureIndex) => (
+                  {Array.isArray(pkg.features) && pkg.features.slice(0, 4).map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center text-sm">
                       <Check className="w-4 h-4 text-pulse-500 mr-2 flex-shrink-0" />
                       <span className="text-gray-700">{feature}</span>
                     </li>
                   ))}
-                  {pkg.features.length > 4 && (
+                  {Array.isArray(pkg.features) && pkg.features.length > 4 && (
                     <li className="text-sm text-gray-500 pl-6">
                       +{pkg.features.length - 4} <span data-i18n="packages.moreFeatures">{t('packages.moreFeatures') || 'more features'}</span>
                     </li>

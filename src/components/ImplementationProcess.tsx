@@ -133,7 +133,7 @@ const ImplementationProcess = () => {
                         <span data-i18n="implementation.keyDeliverables">{t('implementation.keyDeliverables') || 'Key Deliverables'}</span>
                       </h4>
                       <div className="space-y-3">
-                        {phase.deliverables.map((deliverable, deliverableIndex) => (
+                        {Array.isArray(phase.deliverables) && phase.deliverables.map((deliverable, deliverableIndex) => (
                           <div key={deliverableIndex} className="flex items-center text-sm text-gray-600">
                             <div className="w-2 h-2 bg-pulse-500 rounded-full mr-3"></div>
                             {deliverable}

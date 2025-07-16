@@ -106,15 +106,15 @@ const ImplementationProcess = () => {
           {phases.map((phase, index) => (
             <div 
               key={index}
-              className="opacity-0 animate-slide-up rtl:text-right"
+              className="opacity-0 animate-slide-up"
               style={{ animationDelay: `${0.1 * (index + 3)}s` }}
             >
-              <div className="bg-white rounded-3xl border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-500 rtl:text-right">
+              <div className="bg-white rounded-3xl border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-500">
                 <div className="p-8 lg:p-12">
                   <div className="flex flex-col lg:flex-row lg:items-center gap-8">
                     <div className="flex-1">
-                      <div className="flex items-center mb-4 rtl:flex-row-reverse">
-                        <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mr-4 rtl:mr-0 rtl:ml-4 ${phase.color}`}>
+                      <div className="flex items-center mb-4">
+                        <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mr-4 ${phase.color}`}>
                           <phase.icon className="w-6 h-6" />
                         </div>
                         <div>
@@ -128,14 +128,14 @@ const ImplementationProcess = () => {
                     </div>
 
                     <div className="lg:w-80">
-                      <h4 className="text-sm font-medium text-gray-900 mb-4 flex items-center rtl:flex-row-reverse">
-                        <CheckCircle className="w-4 h-4 text-green-500 mr-2 rtl:mr-0 rtl:ml-2" />
+                      <h4 className="text-sm font-medium text-gray-900 mb-4 flex items-center">
+                        <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
                         <span data-i18n="implementation.keyDeliverables">{t('implementation.keyDeliverables') || 'Key Deliverables'}</span>
                       </h4>
                       <div className="space-y-3">
                         {Array.isArray(phase.deliverables) && phase.deliverables.map((deliverable, deliverableIndex) => (
-                          <div key={deliverableIndex} className="flex items-center text-sm text-gray-600 rtl:flex-row-reverse">
-                            <div className="w-2 h-2 bg-pulse-500 rounded-full mr-3 rtl:mr-0 rtl:ml-3"></div>
+                          <div key={deliverableIndex} className="flex items-center text-sm text-gray-600">
+                            <div className="w-2 h-2 bg-pulse-500 rounded-full mr-3"></div>
                             {deliverable}
                           </div>
                         ))}

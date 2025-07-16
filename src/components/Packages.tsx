@@ -148,7 +148,7 @@ const Packages = () => {
             <div 
               key={index}
               className={`
-                relative group opacity-0 animate-on-scroll rtl:text-right
+                relative group opacity-0 animate-on-scroll
                 ${pkg.popular ? 'lg:scale-105' : ''}
               `}
               style={{ animationDelay: `${0.1 * index}s` }}
@@ -162,7 +162,7 @@ const Packages = () => {
               )}
               
               <div className={`
-                relative h-full bg-white rounded-3xl p-8 transition-all duration-500 group-hover:-translate-y-2 rtl:text-right
+                relative h-full bg-white rounded-3xl p-8 transition-all duration-500 group-hover:-translate-y-2
                 ${pkg.popular ? 'border-2 border-pulse-500 shadow-lg' : 'border border-gray-200 hover:shadow-lg'}
               `}>
                 <div className="text-center mb-6">
@@ -187,13 +187,13 @@ const Packages = () => {
                 
                 <ul className="space-y-2 mb-6">
                   {Array.isArray(pkg.features) && pkg.features.slice(0, 4).map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-sm rtl:flex-row-reverse rtl:text-right">
-                      <Check className="w-4 h-4 text-pulse-500 mr-2 rtl:mr-0 rtl:ml-2 flex-shrink-0" />
+                    <li key={featureIndex} className="flex items-center text-sm">
+                      <Check className="w-4 h-4 text-pulse-500 mr-2 flex-shrink-0" />
                       <span className="text-gray-700">{feature}</span>
                     </li>
                   ))}
                   {Array.isArray(pkg.features) && pkg.features.length > 4 && (
-                    <li className="text-sm text-gray-500 pl-6 rtl:pl-0 rtl:pr-6">
+                    <li className="text-sm text-gray-500 pl-6">
                       +{pkg.features.length - 4} <span data-i18n="packages.moreFeatures">{t('packages.moreFeatures') || 'more features'}</span>
                     </li>
                   )}

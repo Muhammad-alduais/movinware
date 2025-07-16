@@ -114,13 +114,15 @@
     text-align: right;
   }
 
-  /* Fix RTL flexbox direction */
   [dir="rtl"] .nav-link::after {
     right: auto;
     left: 0;
   }
 
-  /* RTL margin fixes */
+  [dir="rtl"] .flex {
+    flex-direction: row-reverse;
+  }
+
   [dir="rtl"] .ml-2 {
     margin-left: 0;
     margin-right: 0.5rem;
@@ -151,47 +153,6 @@
     margin-left: 1rem;
   }
 
-  /* RTL padding fixes */
-  [dir="rtl"] .pl-2 {
-    padding-left: 0;
-    padding-right: 0.5rem;
-  }
-
-  [dir="rtl"] .pr-2 {
-    padding-right: 0;
-    padding-left: 0.5rem;
-  }
-
-  [dir="rtl"] .pl-4 {
-    padding-left: 0;
-    padding-right: 1rem;
-  }
-
-  [dir="rtl"] .pr-4 {
-    padding-right: 0;
-    padding-left: 1rem;
-  }
-
-  [dir="rtl"] .pl-6 {
-    padding-left: 0;
-    padding-right: 1.5rem;
-  }
-
-  [dir="rtl"] .pr-6 {
-    padding-right: 0;
-    padding-left: 1.5rem;
-  }
-
-  [dir="rtl"] .pl-8 {
-    padding-left: 0;
-    padding-right: 2rem;
-  }
-
-  [dir="rtl"] .pr-8 {
-    padding-right: 0;
-    padding-left: 2rem;
-  }
-
   [dir="rtl"] .text-left {
     text-align: right;
   }
@@ -200,115 +161,9 @@
     text-align: left;
   }
 
-  /* RTL grid and flex fixes */
-  [dir="rtl"] .grid {
-    direction: rtl;
-  }
-
-  [dir="rtl"] .flex {
-    direction: rtl;
-  }
-
-  [dir="rtl"] .flex-row {
-    flex-direction: row;
-  }
-
-  [dir="rtl"] .justify-between {
-    direction: ltr;
-  }
-
-  [dir="rtl"] .items-center {
-    direction: ltr;
-  }
-
-  /* RTL card and component fixes */
-  [dir="rtl"] .rounded-l-md {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    border-top-right-radius: 0.375rem;
-    border-bottom-right-radius: 0.375rem;
-  }
-
-  [dir="rtl"] .rounded-r-md {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border-top-left-radius: 0.375rem;
-    border-bottom-left-radius: 0.375rem;
-  }
-
-  /* RTL positioning fixes */
-  [dir="rtl"] .left-0 {
-    left: auto;
-    right: 0;
-  }
-
-  [dir="rtl"] .right-0 {
-    right: auto;
-    left: 0;
-  }
-
-  [dir="rtl"] .left-4 {
-    left: auto;
-    right: 1rem;
-  }
-
-  [dir="rtl"] .right-4 {
-    right: auto;
-    left: 1rem;
-  }
-
-  /* RTL transform fixes */
-  [dir="rtl"] .translate-x-1 {
-    transform: translateX(-0.25rem);
-  }
-
-  [dir="rtl"] .-translate-x-1 {
-    transform: translateX(0.25rem);
-  }
-
   /* Arabic font optimization */
   [dir="rtl"] body {
     font-family: 'Segoe UI', Tahoma, Arial, Helvetica, sans-serif;
-  }
-
-  /* RTL responsive fixes */
-  @media (max-width: 768px) {
-    [dir="rtl"] .grid {
-      direction: rtl;
-    }
-    
-    [dir="rtl"] .flex-col {
-      direction: ltr;
-    }
-    
-    [dir="rtl"] .space-y-4 > * + * {
-      margin-top: 1rem;
-      margin-bottom: 0;
-    }
-  }
-
-  /* RTL card layout fixes */
-  [dir="rtl"] .feature-card,
-  [dir="rtl"] .glass-card,
-  [dir="rtl"] .preview-card {
-    direction: rtl;
-    text-align: right;
-  }
-
-  [dir="rtl"] .feature-card .flex,
-  [dir="rtl"] .glass-card .flex,
-  [dir="rtl"] .preview-card .flex {
-    direction: rtl;
-  }
-
-  /* RTL button and link fixes */
-  [dir="rtl"] .button-primary,
-  [dir="rtl"] .button-secondary {
-    direction: ltr;
-  }
-
-  [dir="rtl"] .nav-link {
-    direction: ltr;
   }
 
   /* Smooth scrolling */

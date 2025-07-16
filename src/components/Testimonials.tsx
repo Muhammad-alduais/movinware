@@ -23,13 +23,13 @@ const TestimonialCard = ({
         backgroundImage: `url('${backgroundImage}')`
       }}
     >
-      <div className="absolute top-0 right-0 w-24 h-24 bg-white z-10"></div>
+      <div className="absolute top-0 right-0 w-24 h-24 bg-white z-10 rtl:right-auto rtl:left-0"></div>
       
       <div className="relative z-0">
-        <p className="text-xl mb-8 font-medium leading-relaxed pr-20">{`"${content}"`}</p>
+        <p className="text-xl mb-8 font-medium leading-relaxed pr-20 rtl:pr-0 rtl:pl-20">{`"${content}"`}</p>
         <div>
-          <h4 className="font-semibold text-xl">{author}</h4>
-          <p className="text-white/80">{role}</p>
+          <h4 className="font-semibold text-xl rtl:text-right">{author}</h4>
+          <p className="text-white/80 rtl:text-right">{role}</p>
         </div>
       </div>
     </div>

@@ -235,7 +235,7 @@ const Services = () => {
                   <h4 className="font-medium text-gray-900 mb-2">{process.step}</h4>
                   <p className="text-sm text-gray-600 max-w-32">{process.description}</p>
                   {index < 4 && (
-                    <div className="hidden md:block absolute left-full top-6 w-full h-px bg-gray-200 transform -translate-y-1/2 z-0"></div>
+                    <div className="hidden md:block absolute ltr:left-full rtl:right-full top-6 w-full h-px bg-gray-200 transform -translate-y-1/2 z-0"></div>
                   )}
                 </div>
               ))}

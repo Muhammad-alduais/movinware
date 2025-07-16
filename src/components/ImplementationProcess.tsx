@@ -94,7 +94,7 @@ const ImplementationProcess = () => {
                   <div className="text-sm font-medium text-gray-900">{t('common.week')} {item.week}</div>
                   <div className="text-xs text-gray-600">{item.phase}</div>
                   {index < timeline.length - 1 && (
-                    <div className="hidden md:block absolute left-full top-6 w-full h-px bg-gray-200"></div>
+                    <div className="hidden md:block absolute ltr:left-full rtl:right-full top-6 w-full h-px bg-gray-200"></div>
                   )}
                 </div>
               ))}
@@ -129,13 +129,13 @@ const ImplementationProcess = () => {
 
                     <div className="lg:w-80">
                       <h4 className="text-sm font-medium text-gray-900 mb-4 flex items-center">
-                        <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                        <CheckCircle className="w-4 h-4 text-green-500 mr-2 rtl:mr-0 rtl:ml-2" />
                         <span data-i18n="implementation.keyDeliverables">{t('implementation.keyDeliverables') || 'Key Deliverables'}</span>
                       </h4>
                       <div className="space-y-3">
                         {Array.isArray(phase.deliverables) && phase.deliverables.map((deliverable, deliverableIndex) => (
                           <div key={deliverableIndex} className="flex items-center text-sm text-gray-600">
-                            <div className="w-2 h-2 bg-pulse-500 rounded-full mr-3"></div>
+                            <div className="w-2 h-2 bg-pulse-500 rounded-full mr-3 rtl:mr-0 rtl:ml-3"></div>
                             {deliverable}
                           </div>
                         ))}

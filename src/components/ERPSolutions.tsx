@@ -170,7 +170,7 @@ const ERPSolutions = () => {
                 
                 <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow text-left rtl:text-right">{solution.description}</p>
                 
-                <div 
+                    className="flex items-center text-pulse-500 font-medium text-sm group-hover:text-pulse-600 transition-colors duration-300 cursor-pointer mt-auto justify-start rtl:justify-end rtl:flex-row-reverse"
                   className="flex items-center text-pulse-500 font-medium text-sm group-hover:text-pulse-600 transition-colors duration-300 cursor-pointer mt-auto ltr:justify-start rtl:justify-end rtl:flex-row-reverse"
                   onClick={() => setSelectedSolution(solution)}
                 >

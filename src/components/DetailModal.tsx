@@ -94,7 +94,7 @@ const DetailModal = ({
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {capabilities.map((capability, index) => (
                   <div key={index} className="flex items-start bg-gray-50 rounded-xl p-4">
-                    <div className="w-2 h-2 bg-pulse-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                    <div className="w-2 h-2 bg-pulse-500 rounded-full mr-3 mt-2 flex-shrink-0 rtl:mr-0 rtl:ml-3"></div>
                     <span className="text-gray-700 leading-relaxed">{capability}</span>
                   </div>
                 ))}
@@ -109,7 +109,7 @@ const DetailModal = ({
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {benefits.map((benefit, index) => (
                   <div key={index} className="flex items-start">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0 rtl:mr-0 rtl:ml-3" />
                     <span className="text-gray-700">{benefit}</span>
                   </div>
                 ))}
@@ -123,15 +123,15 @@ const DetailModal = ({
               <h3 className="text-xl font-medium text-gray-900 mb-6">Process Overview</h3>
               <div className="space-y-6">
                 {processSteps.map((step, index) => (
-                  <div key={index} className="border-l-2 border-pulse-500 pl-6 relative">
-                    <div className="absolute w-4 h-4 bg-pulse-500 rounded-full -left-2 top-1"></div>
+                  <div key={index} className="border-l-2 border-pulse-500 pl-6 relative rtl:border-l-0 rtl:border-r-2 rtl:pl-0 rtl:pr-6">
+                    <div className="absolute w-4 h-4 bg-pulse-500 rounded-full -left-2 top-1 rtl:left-auto rtl:-right-2"></div>
                     <h4 className="font-medium text-gray-900 mb-2">{step.title}</h4>
                     <p className="text-gray-600 mb-3">{step.description}</p>
                     {step.deliverables && (
                       <div className="space-y-1">
                         {step.deliverables.map((deliverable, deliverableIndex) => (
                           <div key={deliverableIndex} className="flex items-center text-sm text-gray-500">
-                            <div className="w-1 h-1 bg-gray-400 rounded-full mr-2"></div>
+                            <div className="w-1 h-1 bg-gray-400 rounded-full mr-2 rtl:mr-0 rtl:ml-2"></div>
                             {deliverable}
                           </div>
                         ))}

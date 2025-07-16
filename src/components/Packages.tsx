@@ -215,8 +215,7 @@ const Packages = () => {
                 `}>
                   <span data-i18n="packages.actions.startFreeTrial">{t('packages.actions.startFreeTrial')}</span>
                 </button>
-                <h3 className="text-xl font-medium text-gray-900 mb-2 rtl:text-right">{pkg.title}</h3>
-                <p className="text-gray-600 text-sm mb-4 rtl:text-right">{pkg.description}</p>
+                <p className="text-xs text-gray-500 mt-2 text-center rtl:text-center">
                   <span data-i18n="packages.actions.trialInfo">{t('packages.actions.trialInfo')}</span>
                 </p>
               </div>

@@ -155,27 +155,27 @@ const ERPSolutions = () => {
             >
               <div className="bg-white rounded-3xl p-8 border border-gray-200 hover:border-gray-300 transition-all duration-500 hover:shadow-xl h-full flex flex-col">
                 <div className="flex items-start mb-6">
-                  <div className="w-14 h-14 bg-gray-50 rounded-2xl flex items-center justify-center mr-4 group-hover:bg-pulse-50 transition-all duration-500">
+                  <div className="w-14 h-14 bg-gray-50 rounded-2xl flex items-center justify-center mr-4 rtl:mr-0 rtl:ml-4 group-hover:bg-pulse-50 transition-all duration-500 flex-shrink-0">
                     <solution.icon className="w-7 h-7 text-gray-600 group-hover:text-pulse-500 transition-all duration-500" />
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-xl font-medium text-gray-900 mb-2 pr-2">{solution.title}</h3>
+                  <div className="flex-1 min-w-0 rtl:text-right">
+                    <h3 className="text-xl font-medium text-gray-900 mb-3 pr-2 rtl:pr-0 rtl:pl-2 leading-tight">{solution.title}</h3>
                     <div className="mb-3">
-                      <span className="text-xs text-pulse-500 font-medium bg-pulse-50 px-3 py-1 rounded-full inline-block">
+                      <span className="text-xs text-pulse-500 font-medium bg-pulse-50 px-3 py-1 rounded-full inline-block whitespace-nowrap">
                         {solution.timeline}
                       </span>
                     </div>
                   </div>
                 </div>
                 
-                <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">{solution.description}</p>
+                <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow rtl:text-right rtl:leading-loose">{solution.description}</p>
                 
                 <div 
-                  className="flex items-center text-pulse-500 font-medium text-sm group-hover:text-pulse-600 transition-colors duration-300 cursor-pointer mt-auto"
+                  className="flex items-center text-pulse-500 font-medium text-sm group-hover:text-pulse-600 transition-colors duration-300 cursor-pointer mt-auto rtl:flex-row-reverse rtl:text-right"
                   onClick={() => setSelectedSolution(solution)}
                 >
                   <span data-i18n="common.viewDetails">{t('common.viewDetails')}</span>
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                  <ArrowRight className="w-4 h-4 ml-2 rtl:ml-0 rtl:mr-2 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:group-hover:translate-x-0 transition-transform duration-300 rtl:rotate-180" />
                 </div>
               </div>
             </div>
